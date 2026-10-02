@@ -43,16 +43,31 @@ async function loadProducts() {
 //   anything else          -> "Something went wrong."
 // Then use it: in loadProducts, catch the error, call showError(friendlyMessage(error))
 // and clear the grid. After a later request WORKS, the red banner must disappear.
-// Test offline: DevTools -> Network tab -> "Offline", then reload.
-// Test 404: temporarily change the URL to `${BASE}/producs?limit=10`.
+//
+// You need a screenshot of two of these. Break the page ON PURPOSE to get them:
+//   error_404.png      temporarily change the URL in loadProducts to a typo:
+//                      `${BASE}/producs?limit=10`   (missing t)  -> 404
+//   error_offline.png  temporarily change BASE at the top of this file to:
+//                      'https://dummyjson.invalid'  -> the name does not exist, so fetch
+//                      never reaches a server and throws a TypeError - exactly what a
+//                      dead Wi-Fi gives you.
+// Put both back afterwards!
+//
+// (DevTools -> Network -> "Offline" also works, but only if you do NOT reload: tick it
+//  AFTER the page has loaded, then trigger a new request. If you reload while offline,
+//  Chrome blocks the page itself and you get Chrome's error page instead of yours.)
 function friendlyMessage(error) {
   // TODO
 }
 
 // ---------- EXERCISE 5 - search ----------
-// search(query) calls `${BASE}/products/search?q=${query}`  (results are in data.products)
+// search(query) calls `${BASE}/products/search?q=${encodeURIComponent(query)}`
+//   (results are in data.products. encodeURIComponent keeps a query with a space,
+//    & or # from quietly searching for the wrong thing.)
 //   - empty query   -> go back to loadProducts()
-//   - zero results  -> write  No products match "<query>"  into productsEl (this is NOT an error banner)
+//   - zero results  -> show  No products match "<query>"  in productsEl.
+//                      Use textContent for this one, NOT innerHTML: it is text the user
+//                      typed, and innerHTML would run it as HTML.
 //   - errors        -> friendlyMessage, like exercise 3
 // The tricky part: the user types fast. A slow response for "ph" can arrive AFTER the
 // response for "pho" and overwrite it. Only the LATEST search may render.
@@ -70,7 +85,8 @@ searchEl.addEventListener('input', () => search(searchEl.value.trim()));
 // Make EACH request forgiving, so one failure doesn't throw away the other:
 //     getJSON(...).catch(() => null)
 // Then render into detailEl (give it class "detail"):
-//   - product is null      -> showError(...) and stop (no half-empty box)
+//   - product is null      -> showError("We couldn't load that product.") and stop
+//                             (no half-empty box)
 //   - otherwise            -> image, title, description, price
 //   - categories not null  -> an extra line: "N categories in the shop" (N = categories.length)
 //   - categories is null   -> skip that line, everything else still shows

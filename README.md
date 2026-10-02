@@ -12,13 +12,13 @@ The data comes from the free API **https://dummyjson.com** (no sign-up needed).
 |---|---|
 | **[📝 Exercises](./EXERCISES.md)** | 7 exercises: 5 features and 2 bug hunts |
 | **[📤 How to submit](./SUBMITTING.md)** | Fork, branch, Pull Request — step by step |
-| **[`starter/`](./starter)** | The page you start from (copy it, don't edit it in place) |
+| **[`starter/`](./starter)** | The page you start from (you copy it; never edit it in place) |
 
 **Deadline:** before Workshop 14.
 
 ## What you'll practise
 
-* `fetch` and `response.ok` — why a 404 is *not* an error until you make it one
+* `fetch` and `response.ok` — a 404 is not an error until *you* turn it into one
 * `async` / `await` and `try` / `catch` / `finally`
 * Showing loading, empty and error states in the page
 * `Promise.all`, and when to run requests in parallel
@@ -26,12 +26,15 @@ The data comes from the free API **https://dummyjson.com** (no sign-up needed).
 
 ## Quick start
 
+Follow [SUBMITTING.md](./SUBMITTING.md) steps 1–4 — fork, clone your fork, branch, then:
+
 ```bash
-git clone https://github.com/<your-username>/javascript-205-homework-12.git
-cd javascript-205-homework-12
-cp -r starter my-work     # work in the copy
+mkdir submissions/<your-username>
+cp -r starter/* submissions/<your-username>/
 ```
 
-Open `my-work/index.html` in your browser, keep DevTools open (`F12`), and start with Exercise 1.
+Open `submissions/<your-username>/index.html` in your browser, keep DevTools open (`F12`), and start
+with Exercise 1. **Everything you write lives in that one folder**, and that folder is what you hand in.
 
-> Check Exercise 1 any time with `node check_1.js` (Node 18 or newer).
+> Check Exercise 1 any time with `cd submissions/<your-username>` and then `node check_1.js`
+> (Node 18 or newer). It only ever tests the `api.js` sitting next to it.

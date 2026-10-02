@@ -1,8 +1,10 @@
 // BUG HUNT B - this code has TWO bugs. Both are about requests, not about HTML.
 //
 // Symptom 1: look up product 99999. Instead of an error you get a card full of "undefined".
-// Symptom 2: the "Featured picks" take about three times longer to appear than they should
-//            (the page prints how many milliseconds it took - compare before/after your fix).
+// Symptom 2: the "Featured picks" take several times longer to appear than they should.
+//            The page prints how many milliseconds it took - note the number, fix the bug,
+//            and compare. Expect it to get several times faster (how many depends on your
+//            connection), not a few percent faster.
 
 const BASE = 'https://dummyjson.com';
 const idEl = document.getElementById('id');
