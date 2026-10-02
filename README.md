@@ -1,3 +1,5 @@
+> 🇬🇪 [ქართული ვერსია](./README_ka.md)
+
 # Homework 12 — fetch, async/await and error handling
 
 Welcome to your twelfth homework! 🎉

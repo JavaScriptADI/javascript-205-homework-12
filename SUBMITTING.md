@@ -1,3 +1,5 @@
+> 🇬🇪 [ქართული ვერსია](./SUBMITTING_ka.md)
+
 # How to submit Homework 12
 
 1. Fork the homework repository and clone your fork.

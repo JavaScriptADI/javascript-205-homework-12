@@ -1,3 +1,5 @@
+> 🇬🇪 [ქართული ვერსია](./EXERCISES_ka.md)
+
 # Homework 12 — fetch, async/await and error handling
 
 You will build a small product shop one feature at a time, and hunt two bugs in code that already exists.

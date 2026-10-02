@@ -27,3 +27,13 @@ submissions/
 Nothing else goes in your folder, and never change another student's folder.
 
 The tasks are in [EXERCISES.md](../EXERCISES.md) and the submission steps in [SUBMITTING.md](../SUBMITTING.md).
+
+---
+
+## ჩაბარებული სამუშაოები
+
+თითოეული სტუდენტი ქმნის **ერთ ფოლდერს** აქ, თავისი GitHub-ის მომხმარებლის სახელით (`submissions/<your-username>/`). ფოლდერის სტრუქტურა იხილეთ ზემოთ.
+
+სხვა არაფერი ხვდება თქვენს ფოლდერში და არასდროს შეცვალოთ სხვა სტუდენტის ფოლდერი.
+
+დავალებები იხილეთ [EXERCISES_ka.md](../EXERCISES_ka.md)-ში, ჩაბარების ნაბიჯები კი — [SUBMITTING_ka.md](../SUBMITTING_ka.md)-ში.
